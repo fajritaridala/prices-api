@@ -67,7 +67,7 @@ request body :
   "prediction chart" : {
     "actual price": "harga asli",
     "history predicted": "prediksi histori harga asli",
-    "future prediction": "prediksi harga masa depan
+    "future prediction": "prediksi harga masa depan"
   },
   "current price": "harga terkin",
   "percentage": "persentase 1 bulan terakhir",
