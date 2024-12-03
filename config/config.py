@@ -1,6 +1,19 @@
 # Configuration management
 MODEL_URL = 'https://storage.googleapis.com/stock-market-model/BTC_model.h5'
 
+COIN_NAMES = {
+    "btc": "Bitcoin",
+    "sol": "Solana",
+    "sui": "Sui",
+    "ena": "ENA",
+    "eth": "Ethereum", 
+    "op": "Optimism",
+    "render": "Render",
+    "tao": "Tao",
+    "tia": "Celestia",
+    "xrp": "Ripple"
+}
+
 CSV_URLS = {
     "btc": "https://storage.googleapis.com/stock-market-csv/BTC_All_graph_coinmarketcap.csv",
     "sol": "https://storage.googleapis.com/stock-market-csv/SOL_All_graph_coinmarketcap.csv",

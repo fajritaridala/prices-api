@@ -3,7 +3,7 @@ import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from models.model_loader import ModelLoader
-from config.config import MODEL_URL, MODEL_CONFIG
+from config.config import MODEL_URL, MODEL_CONFIG, CSV_URLS, COIN_NAMES
 from services.data_service import DataService
 from services.prediction_service import PredictionService
 from utils.scaler import PriceScaler
@@ -18,6 +18,16 @@ scaler = PriceScaler()
 @app.route('/prices/<id>', methods=['GET'])
 def get_prices(id):
     try:
+        # Normalize the ID to lowercase
+        id = id.lower()
+        
+        # Validate if coin exists in CSV_URLS
+        if id not in CSV_URLS:
+            return jsonify({"error": "Cryptocurrency not found"}), 404
+        
+        # Get coin name from COIN_NAMES, fallback to capitalized ID
+        coin_name = COIN_NAMES.get(id, id.capitalize())
+        
         # Get data for specified cryptocurrency
         prices, times, volumes, market_caps = DataService.get_data_for_crypto(id)
         
@@ -67,6 +77,8 @@ def get_prices(id):
         
         # Prepare response
         response = {
+            "coin": coin_name,
+            "coin_symbol": id.upper(),
             "prediction chart" : {
                 "actual price": actual_prices,
                 "history predicted": predicted_prices,

@@ -1,0 +1,30 @@
+link : "https://zenvest-prices-apis-747657276300.asia-southeast2.run.app"
+api path : {
+  "/prices/<nama coin>"
+}
+coin : {
+   "btc",
+    "sol",
+    "sui",
+    "ena",
+    "eth",
+    "op",
+    "render",
+    "tao",
+    "tia",
+    "xrp"
+}
+
+request body:
+{
+  "prediction chart" : {
+    "actual price": "harga asli",
+    "history predicted": "prediksi histori harga asli",
+    "future prediction": "prediksi harga masa depan"
+  },
+  "current price": "harga terkin",
+  "percentage": "persentase 1 bulan terakhir",
+  "yearly percentage": "persentase 1 tahun terakhir",
+  "volume": "volume terbaru",
+  "marketcap": "kapitalisasi pasar terbaru"
+}
