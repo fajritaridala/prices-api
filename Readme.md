@@ -1,7 +1,7 @@
 # Stock Price Prediction API
 
 ## Persyaratan Sistem
-- Python 3.11 or latest
+- Python 3.10 or latest
 - pip
 
 ## Instalasi
@@ -34,12 +34,12 @@ prices/
 
 ### 2. Buat File `requirements.txt`
 ```
-flask==2.1.0
-tensorflow==2.9.0
-numpy==1.22.4
-pandas==1.4.2
-scikit-learn==1.1.1
-requests==2.27.1
+flask==3.1.0
+tensorflow==2.18.0
+numpy==2.0.2
+pandas==2.2.3
+scikit-learn==1.5.2
+requests==2.31.0
 ```
 
 ### 3. Instal Dependensi
