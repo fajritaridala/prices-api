@@ -15,6 +15,41 @@ app = Flask(__name__)
 model = ModelLoader.download_and_load_model(MODEL_URL)
 scaler = PriceScaler()
 
+@app.route('/prices', methods=['GET'])
+def get_all_prices():
+    try:
+        # List to store prices for all cryptocurrencies
+        all_crypto_prices = []
+        for crypto_id in CSV_URLS:
+            try:
+                id = crypto_id.lower()
+                coin_name = COIN_NAMES.get(id, id.capitalize())
+                prices, times, volumes, market_caps = DataService.get_data_for_crypto(id)
+                
+                latest_price = float(prices[-1])
+                previous_price = float(prices[-2]) if len(prices) > 1 else latest_price
+                
+                short_term_percentage_change = round(((latest_price - previous_price) / previous_price) * 100, 2)
+                
+                crypto_info = {
+                    "name": coin_name,
+                    "symbol": id.upper(),
+                    "currentPrice": "{:,.2f}".format(latest_price),
+                    "percentageChange": short_term_percentage_change
+                }
+                
+                all_crypto_prices.append(crypto_info)
+            
+            except Exception as crypto_error:
+                print(f"Error processing {id}: {crypto_error}")
+                continue
+        
+        return jsonify(all_crypto_prices)
+    
+    except Exception as e:
+        print(f"Unexpected Error in get_all_prices: {e}")
+        return jsonify({"error": "An unexpected error occurred while fetching prices"}), 500
+
 @app.route('/prices/<id>', methods=['GET'])
 def get_prices(id):
     try:
@@ -78,7 +113,7 @@ def get_prices(id):
         # Prepare response
         response = {
             "coin": coin_name,
-            "coin_symbol": id.upper(),
+            "coin symbol": id.upper(),
             "prediction chart" : {
                 "actual price": actual_prices,
                 "history predicted": predicted_prices,
