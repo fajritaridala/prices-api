@@ -33,8 +33,8 @@ def get_all_prices():
                 
                 crypto_info = {
                     "coin": coin_name,
-                    "coin symbol": id.upper(),
-                    "current price": "{:,.2f}".format(latest_price),
+                    "coin_symbol": id.upper(),
+                    "current_price": "{:,.2f}".format(latest_price),
                     "percentage": short_term_percentage_change
                 }
                 
@@ -113,15 +113,15 @@ def get_prices(id):
         # Prepare response
         response = {
             "coin": coin_name,
-            "coin symbol": id.upper(),
-            "prediction chart" : {
-                "actual price": actual_prices,
-                "history predicted": predicted_prices,
-                "future prediction": future_predicted_prices
+            "coin_symbol": id.upper(),
+            "prediction_chart" : {
+                "actual_price": actual_prices,
+                "history_predicted": predicted_prices,
+                "future_prediction": future_predicted_prices
             },
-            "current price": "{:,.2f}".format(latest_price),
+            "current_price": "{:,.2f}".format(latest_price),
             "percentage": short_term_percentage_change,
-            "yearly percentage": yearly_percentage_change,
+            "yearly_percentage": yearly_percentage_change,
             "volume": latest_volume,
             "marketcap": latest_marketcap
         }
