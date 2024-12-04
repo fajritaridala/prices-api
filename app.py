@@ -32,10 +32,10 @@ def get_all_prices():
                 short_term_percentage_change = round(((latest_price - previous_price) / previous_price) * 100, 2)
                 
                 crypto_info = {
-                    "name": coin_name,
-                    "symbol": id.upper(),
-                    "currentPrice": "{:,.2f}".format(latest_price),
-                    "percentageChange": short_term_percentage_change
+                    "coin": coin_name,
+                    "coin symbol": id.upper(),
+                    "current price": "{:,.2f}".format(latest_price),
+                    "percentage": short_term_percentage_change
                 }
                 
                 all_crypto_prices.append(crypto_info)
