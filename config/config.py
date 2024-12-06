@@ -5,11 +5,11 @@ COIN_NAMES = {
     "btc": "Bitcoin",
     "sol": "Solana",
     "sui": "Sui",
-    "ena": "ENA",
+    "ena": "Ethena",
     "eth": "Ethereum", 
     "op": "Optimism",
     "render": "Render",
-    "tao": "Tao",
+    "tao": "Bittensor",
     "tia": "Celestia",
     "xrp": "Ripple"
 }
