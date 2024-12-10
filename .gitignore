@@ -7,3 +7,6 @@ __pycache__/
 # Model files
 *.h5
 *.hdf5
+
+# dev python
+app_try.py
