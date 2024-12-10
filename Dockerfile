@@ -1,4 +1,4 @@
-FROM python:3.12-slim-buster
+FROM python:3.12-slim
 
 WORKDIR /app
 
@@ -14,8 +14,8 @@ ENV FLASK_APP=app.py
 
 ENV FLASK_RUN_HOST=0.0.0.0
 
-ENV FLASK_RUN_PORT=3000
+ENV FLASK_RUN_PORT=8080
 
-EXPOSE 3000
+EXPOSE 8080
 
 CMD ["flask", "run"]
