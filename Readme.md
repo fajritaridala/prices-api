@@ -28,26 +28,18 @@ prices/
 │   ├── data_preprocessor.py
 │   └── scaler.py
 │
-└── app.py
+├── app.py
+├── Dockerfile
+├── Readme.md
+└── requirements.txt
 ```
 
-
-### 2. Buat File `requirements.txt`
-```
-flask==3.1.0
-tensorflow==2.18.0
-numpy==2.0.2
-pandas==2.2.3
-scikit-learn==1.5.2
-requests==2.31.0
-```
-
-### 3. Instal Dependensi
+### 2. Instal Dependensi
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4. Menjalankan Aplikasi
+### 3. Menjalankan Aplikasi
 ```bash
 # Untuk development
 python app.py
@@ -58,21 +50,6 @@ flask run
 
 ## Endpoints
 ```
+/prices
 /prices/<crypto_id>
-```
-
-request body :
-```json
-{
-  "prediction chart" : {
-    "actual price": "harga asli",
-    "history predicted": "prediksi histori harga asli",
-    "future prediction": "prediksi harga masa depan"
-  },
-  "current price": "harga terkin",
-  "percentage": "persentase 1 bulan terakhir",
-  "yearly percentage": "persentase 1 tahun terakhir",
-  "volume": "volume terbaru",
-  "marketcap": "kapitalisasi pasar terbaru"
-}
 ```
