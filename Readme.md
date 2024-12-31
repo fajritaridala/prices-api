@@ -1,12 +1,14 @@
-# Stock Price Prediction API
+> # Stock Price Prediction API
 
-## Persyaratan Sistem
+## **System Requirements**
+```
 - Python 3.10 or latest
-- pip
+- pip 
+```
 
-## Instalasi
+## **Installation**
 
-### 1. Struktur Proyek
+### **1. Project structure**
 ```
 prices/
 │
@@ -34,22 +36,34 @@ prices/
 └── requirements.txt
 ```
 
-### 2. Instal Dependensi
+### **2. Install the dependencies**
 ```bash
 pip install -r requirements.txt
 ```
 
-### 3. Menjalankan Aplikasi
+### **3. Run the app**
 ```bash
-# Untuk development
+# for development
 python app.py
 
-# Atau
+# or
 flask run
 ```
 
-## Endpoints
+## **Endpoints**
 ```
 /prices
 /prices/<crypto_id>
 ```
+
+## **Docker Container**
+
+### 1. Build the Docker image :
+```
+docker build -t stock-prediction-api .
+```
+### 2. Run the container:
+```
+docker run -p 8080:8080 stock-prediction-api
+```
+The API will be accessible at http://localhost:8080
